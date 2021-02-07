@@ -3,6 +3,9 @@ name = "git-cal"
 version = "0.1.0"
 authors = ["Shohei YOSHIDA <syohex@gmail.com>"]
 edition = "2018"
+license = "MIT"
+repository = "https://github.com/syohex/git-cal-rs"
+homepage = "https://github.com/syohex/git-cal-rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
