@@ -54,8 +54,7 @@ fn collect_commit_days(author: &Option<String>) -> Result<Vec<DateTime<Local>>, 
 
     let commit_days: Vec<DateTime<Local>> = output_str
         .lines()
-        .filter_map(|s| s.parse::<i64>().ok())
-        .map(|epoch| Local.timestamp(epoch, 0))
+        .filter_map(|s| s.parse::<i64>().map(|epoch| Local.timestamp(epoch, 0)).ok())
         .collect();
 
     Ok(commit_days)
@@ -174,7 +173,7 @@ impl GitCalendar {
                 print_square(freqs[index]);
             }
 
-            println!("");
+            println!();
         }
 
         Ok(())
